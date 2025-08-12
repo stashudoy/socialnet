@@ -5,13 +5,14 @@ import DialogItem from './DialogItem/DialogItem'
 
 
 const Dialogs = (props) => {
-  
+
 let state = props.messagesPage
 let dialogsElements = state.dialogs.map(el => (<DialogItem name={el.name} id={el.id}/>))
 let messagesElements = state.messages.map((el) => (<Message message={el.message}/> )) 
 let newMessageBody = state.newMessageBody
 
-let onSendMessageClick = () => { props.sendMessage() }
+let onSendMessageClick = () => {
+   props.sendMessage() }
 
 let onNewMessageChange = (e) => {
             let body = e.target.value  //ref по возможности не используем  // тут ф-ия робит с html
